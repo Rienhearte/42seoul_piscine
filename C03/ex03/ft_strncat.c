@@ -6,15 +6,15 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:32:14 by seoh              #+#    #+#             */
-/*   Updated: 2020/01/30 15:53:07 by seoh             ###   ########.fr       */
+/*   Updated: 2020/01/31 06:10:45 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	digit;
-	int	i;
-	int	j;
+	int				digit;
+	unsigned int	i;
+	unsigned int	j;
 
 	digit = 0;
 	while (dest[digit] != '\0')
@@ -23,7 +23,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	}
 	i = digit;
 	j = 0;
-	while (j <= nb)
+	while (src[j] != '\0' && j < nb)
 	{
 		dest[i] = src[j];
 		i++;

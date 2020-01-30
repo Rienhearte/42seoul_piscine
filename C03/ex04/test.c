@@ -6,14 +6,14 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 15:56:03 by seoh              #+#    #+#             */
-/*   Updated: 2020/01/30 20:28:55 by seoh             ###   ########.fr       */
+/*   Updated: 2020/01/31 00:28:20 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int j;
+	char i;
+	char j;
 
 	i = 0;
 	if (*to_find == '\0')
@@ -26,13 +26,21 @@ char	*ft_strstr(char *str, char *to_find)
 			while (1)
 			{
 				if (to_find[j] == '\0')
-					return (&str[i]);
+					return(&str[i]);
 				if (!(str[i + j] == to_find[j]))
-					break ;
+					break;
 				j++;
 			}
 		}
 		i++;
 	}
-	return (0);
+	return (0);	
+}
+
+#include <stdio.h>
+int main()
+{
+	char str1[] = "hello world!!!";
+	char str2[] = "world!";
+	printf("%s",ft_strstr(str1, str2));
 }
