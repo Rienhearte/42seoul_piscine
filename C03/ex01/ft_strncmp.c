@@ -6,22 +6,21 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:27:24 by seoh              #+#    #+#             */
-/*   Updated: 2020/01/31 06:13:41 by seoh             ###   ########.fr       */
+/*   Updated: 2020/01/31 15:53:32 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (((*s1 == *s2) && *s1 != '\0') && i <= n)
+	while (*s1 != '\0' && *s2 != '\0' && n > 0)
 	{
+		if (*s2 != *s1)
+			break ;
 		s1++;
 		s2++;
-		if (i == n)
-			return (0);
-		i++;
+		n--;
 	}
+	if (n == 0)
+		return (0);
 	return (*(unsigned char*)s1 - *(unsigned char*)s2);
 }
