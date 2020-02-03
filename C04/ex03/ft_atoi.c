@@ -6,7 +6,7 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 05:49:15 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/03 17:58:58 by seoh             ###   ########.fr       */
+/*   Updated: 2020/02/03 19:50:40 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int sign_check(int sign_count)
 {
 	if(sign_count % 2 == 1)
 		return (-1);
-	return 0;
+	return (1);
 }
 
 int ft_atoi(char *str)
@@ -42,9 +42,3 @@ int ft_atoi(char *str)
 	}
 	return (sign_check(sign_count) * value);
 }
-
-int main()
-{
-	char a[] = "   +++-+-+-+++-29018231";
-	printf("%d", ft_atoi(a));
-}	
