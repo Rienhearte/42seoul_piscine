@@ -6,7 +6,7 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 04:43:04 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/05 04:45:37 by seoh             ###   ########.fr       */
+/*   Updated: 2020/02/05 04:52:19 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_iterative_power(int nb, int power)
 		result = result * nb;
 		cnt++;
 	}
-	return (result));
+	return (result);
 }

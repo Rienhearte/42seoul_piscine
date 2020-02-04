@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/05 06:47:27 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/05 06:54:59 by seoh             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	while (*str == '\0')
+	while (*str != '\0')
 	{
-		write(1, &a, 1);
+		write(1, str, 1);
 		str++;
 	}
 }
 
-
-void main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
-	putstr(*argv[0]);
+	argc = 0;
+	ft_putstr(argv[0]);
 }
