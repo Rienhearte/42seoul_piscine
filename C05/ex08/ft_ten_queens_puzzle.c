@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 03:39:33 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/05 08:04:54 by seoh             ###   ########.fr       */
+/*   Created: 2020/02/05 04:59:21 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/05 04:59:29 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+int	ft_ten_queens_puzzle(void)
 {
-	long long i;
+	unsigned int idx;
 
-	i = 2;
+	idx = 2;
 	if (nb <= 1)
 		return (0);
-	while (i <= (nb / 2))
+	while (idx <= (nb / 2))
 	{
-		if (nb % i == 0)
+		if (nb % idx == 0)
 			return (0);
-		i++;
+		idx++;
 	}
 	return (1);
 }

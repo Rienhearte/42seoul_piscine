@@ -6,24 +6,24 @@
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 03:28:30 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/05 03:36:05 by seoh             ###   ########.fr       */
+/*   Updated: 2020/02/05 07:59:53 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	unsigned int idx;
+	long long i;
 
 	if (nb <= 0)
 		return (0);
 	if (nb <= 1)
 		return (nb);
-	idx = 1;
-	while (idx * idx <= nb)
+	i = 1;
+	while (i * i <= nb)
 	{
-		if (idx * idx == nb)
-			return ((int)idx);
-		idx++;
+		if (i * i == nb)
+			return ((int)i);
+		i++;
 	}
 	return (0);
 }
