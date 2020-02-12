@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/09 02:17:57 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/13 02:02:48 by seoh             ###   ########.fr       */
+/*   Created: 2020/02/10 15:05:17 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/10 15:45:55 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-int		ft_strlen(char *str)
-{
-	int	idx;
+# include <unistd.h>
 
-	idx = 0;
-	while (str[idx] != '\0')
-		idx++;
-	return (idx);
-}
+typedef int	t_bool;
 
-char	*ft_strdup(char *src)
-{
-	int		idx;
-	char	*dest;
+# define TRUE 1
+# define FALSE 0
+# define SUCCESS 0
 
-	if ((dest = (char*)malloc(ft_strlen(src) * sizeof(char) + 1)) == NULL)
-		return (0);
-	idx = 0;
-	while (src[idx])
-	{
-		dest[idx] = src[idx];
-		idx++;
-	}
-	dest[idx] = '\0';
-	return (dest);
-}
+# define EVEN(nbr) (nbr % 2 == 0)
+
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+
+#endif

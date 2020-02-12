@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/09 02:17:57 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/13 02:02:48 by seoh             ###   ########.fr       */
+/*   Created: 2020/02/11 04:44:32 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/11 04:49:08 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
-	int	idx;
+	int			*rtn;
+	long long	cnt;
+	long long	maxn;
+	long long	minn;
 
-	idx = 0;
-	while (str[idx] != '\0')
-		idx++;
-	return (idx);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		idx;
-	char	*dest;
-
-	if ((dest = (char*)malloc(ft_strlen(src) * sizeof(char) + 1)) == NULL)
+	minn = min;
+	maxn = max;
+	if (maxn - minn <= 0)
 		return (0);
-	idx = 0;
-	while (src[idx])
+	rtn = (int*)malloc(sizeof(int) * (maxn - minn));
+	if (rtn == 0)
+		return (0);
+	cnt = 0;
+	while (cnt < maxn - minn)
 	{
-		dest[idx] = src[idx];
-		idx++;
+		*rtn = (int)(minn + cnt);
+		cnt++;
+		rtn++;
 	}
-	dest[idx] = '\0';
-	return (dest);
+	return (rtn - cnt);
 }
