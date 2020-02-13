@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 04:44:32 by seoh              #+#    #+#             */
-/*   Updated: 2020/02/13 04:30:55 by seoh             ###   ########.fr       */
+/*   Created: 2020/02/13 03:35:29 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/13 03:48:13 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	*ft_range(int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int			*rtn;
 	long long	cnt;
-	long long	maxn;
-	long long	minn;
+	long long	minnum;
+	long long	maxnum;
+	int			*rtn;
 
-	minn = min;
-	maxn = max;
-	if (maxn - minn <= 0)
-		return (0);
-	rtn = (int*)malloc(sizeof(int) * (maxn - minn));
-	if (rtn == 0)
-		return (0);
-	cnt = 0;
-	while (cnt < maxn - minn)
+	maxnum = max;
+	minnum = min;
+	if (maxnum - minnum <= 0)
 	{
-		*rtn = (int)(minn + cnt);
-		cnt++;
-		rtn++;
+		*range = 0;
+		return (0);
 	}
-	return (rtn - cnt);
+	rtn = (int*)malloc(sizeof(int) * (maxnum - minnum));
+	if (rtn == 0)
+		return (-1);
+	cnt = 0;
+	while (cnt < maxnum - minnum)
+	{
+		rtn[cnt] = (int)(minnum + cnt);
+		cnt++;
+	}
+	*range = rtn;
+	return ((int)cnt);
 }
